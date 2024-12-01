@@ -56,13 +56,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stm->execute($data);
             
             echo "<script>
-                alert('¡La solicitud de mantenimiento se creo con exito!');
+                alert('¡La solicitud de visita se creo con exito!');
                 window.location.href = '../index.php';
             </script>";
             exit;
         } else {
             echo "<script>
-                alert('¡El inmueble no existe!');
+                alert('¡El inmueble que desea visitar no existe!');
                 window.location.href = '../index.php';
             </script>";
             exit;
