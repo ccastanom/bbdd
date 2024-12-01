@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
+$servername = "mysql";
 $username = "root";
-$password = "";
+$password = "1234";
 $dbname = "condominios";
 // Crear conexión
 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

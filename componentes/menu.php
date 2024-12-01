@@ -62,6 +62,19 @@
         <ul class="navbar-nav">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Evento
+            </a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="crear-visita.php">Crear</a></li>
+            <li><a class="dropdown-item" href="buscar-visita.php">Buscar</a></li>   
+            </ul>
+        </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           
           
           
