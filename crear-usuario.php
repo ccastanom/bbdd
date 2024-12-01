@@ -1,18 +1,3 @@
-<?php 
-$queries = include './db/queries.php';
-$pdo = include './db/conexion.php';
-
-function getQuery($key, $queries) {
-    return $queries[$key] ?? null; // Devuelve la consulta o null si no existe
-}
-
-$query_key = "get_roles";
-$query = getQuery($query_key, $queries);
-
-$stm = $pdo->prepare($query);
-$stm->execute();
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <?php include './componentes/head.php'?>
@@ -22,7 +7,7 @@ $stm->execute();
   <main>
 
      <!-- Sección para registrar Usuario-->
-    <section id="form-registro-usuario">
+    <section>
         <div class="d-flex justify-content-center pt-3">
           <h2>Registro de Usuario</h2>
         </div>
@@ -30,37 +15,33 @@ $stm->execute();
           <form class="row g-3" action="usuarios/crear.php" method="POST">
             <div class="col-12">
               <label for="nombre_usuario" class="form-label">Nombre del usuario</label>
-              <input type="text" class="form-control" id="nombre_usuario" placeholder="Escribe tu nombre" name="nombre_usuario">
+              <input type="text" class="form-control" id="nombre_usuario" placeholder="Escribe tu nombre" name="nombre_usuario" required>
             </div>
             <div class="col-12">
               <label for="id_usuario" class="form-label">Documento</label>
-              <input type="number" class="form-control" id="id_usuario" placeholder="Escribe tu documento" name="id_usuario">
+              <input type="number" class="form-control" id="id_usuario" placeholder="Escribe tu documento" name="id_usuario" required>
             </div>
             <div class="col-md-6">
               <label for="correo_usuario" class="form-label">Correo usuario</label>
-              <input type="email" class="form-control" id="correo_usuario" name="correo_usuario">
+              <input type="email" class="form-control" id="correo_usuario" name="correo_usuario" required>
             </div>
             <div class="col-md-6">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password">
+              <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="col-md-6">
               <label for="direccion_usuario" class="form-label">Direccion</label>
-              <input type="text" class="form-control" id="direccion_usuario" name="direccion_usuario">
+              <input type="text" class="form-control" id="direccion_usuario" name="direccion_usuario" required>
             </div>
             <div class="col-md-4">
               <label for="codigo_rol" class="form-label">Codigo rol</label>
-              <select id="codigo_rol" class="form-select" name="codigo_rol">
-              <?php 
-                  while( $fila = $stm->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<option value='" . $fila["codigo_rol"] . "'>" . htmlspecialchars($fila["descripcion_rol"]) . "</option>";
-                  }
-                ?>
+              <select id="codigo_rol" class="form-select" name="codigo_rol" required>
+              <?php include './usuarios/listar-roles.php'; ?>
               </select>
             </div>
             <div class="col-md-2">
               <label for="telefono_usuario" class="form-label">Telefono</label>
-              <input type="text" class="form-control" id="telefono_usuario" name="telefono_usuario">
+              <input type="text" class="form-control" id="telefono_usuario" name="telefono_usuario" required>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary">Guardar</button>

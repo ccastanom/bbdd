@@ -14,9 +14,20 @@
             </a>
             <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="crear-usuario.php">Crear</a></li>
-            <li><a class="dropdown-item" href="editar-usuario.php">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Eliminar</a></li>
-            <li><a class="dropdown-item" href="buscar-usuario">Buscar</a></li>   
+            <li><a class="dropdown-item" href="buscar-usuario.php">Buscar</a></li>   
+            </ul>
+        </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Inmubles
+            </a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="crear-inmueble.php">Crear</a></li>
+            <li><a class="dropdown-item" href="buscar-inmueble.php">Buscar</a></li>   
             </ul>
         </li>
         </ul>
@@ -28,10 +39,8 @@
             Roles
             </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="rol.php">Crear</a></li>
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Eliminar</a></li>
-            <li><a class="dropdown-item" href="#">Buscar</a></li>
+            <li><a class="dropdown-item" href="crear-rol.php">Crear</a></li>
+            <li><a class="dropdown-item" href="buscar-rol.php">Buscar</a></li>
             </ul>
         </li>
         </ul>
