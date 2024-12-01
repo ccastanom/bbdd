@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plataforma de Gestión Residencial</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-</head>
+<?php include './componentes/head.php'?>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="images/logo.png" alt="Logo Residencial" class="logo" />
-      <h1>Plataforma de Gestión Residencial</h1>
-    </div>
-    <nav>
-      <a href="usuario.php">Usuarios</a>
-      <a href="inmueble.php">Inmuebles</a>
-      <a href="pago.php">Pagos</a>
-      <a href="reserva.php">Reservas</a>
-      <a href="mensaje.php">Chat</a>
-      <a href="evento.php">Eventos</a>
-      <a href="documento.php">Documentos</a>
-      <a href="mantenimiento.php">Mantenimiento</a>
-      <a href="permiso.php">Permisos</a>
-      <a href="reporte.php">Reportes</a>
-      <a href="rol.php">Roles</a>
-      <a href="visita.php">Visitas</a>
-    </nav>
-  </header>
-
+  <?php include './componentes/menu.php'; ?>
   <main>
-
-     <!-- Sección para registrar Usuario-->
-    <h1>Holi soy la pagina inicial</h1>
-
+    <div class="d-flex justify-content-center m-5">
+      <h2>Soy la pagina principal</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

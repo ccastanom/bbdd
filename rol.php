@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plataforma de Gestión Residencial</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-</head>
+<?php include './componentes/head.php'?>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="images/logo.png" alt="Logo Residencial" class="logo" />
-      <h1>Plataforma de Gestión Residencial</h1>
-    </div>
-    <nav>
-      <a href="usuario.php">Usuarios</a>
-      <a href="inmueble.php">Inmuebles</a>
-      <a href="pago.php">Pagos</a>
-      <a href="reserva.php">Reservas</a>
-      <a href="mensaje.php">Chat</a>
-      <a href="evento.php">Eventos</a>
-      <a href="documento.php">Documentos</a>
-      <a href="mantenimiento.php">Mantenimiento</a>
-      <a href="permiso.php">Permisos</a>
-      <a href="reporte.php">Reportes</a>
-      <a href="rol.php" class="selected">Roles</a>
-      <a href="visita.php">Visitas</a>
-    </nav>
-  </header>
-
+  <?php include './componentes/menu.php'; ?>
   <main>
 
-     <!-- Sección para registrar Usuario-->
-    <section id="form-rol" class="form-section">
-        <h2>Registro de roles</h2>
-        <form action="roles/crear.php" method="POST" style="display: flex; flex-direction: column">
-            <label for="codigo_rol">Código Rol:</label>
-            <input type="number" id="codigo_rol" name="codigo_rol" required />
-        
-            <label for="descripcion_rol">Descipcion del rol:</label>
-            <input type="text" id="description_rol" name="descripcion_rol" required />
-        
-            <button type="submit" style="width: 100%">Registrar Usuario</button>
-        </form>
+     <!-- Sección para registrar roles-->
+     <section id="form-registro-usuario">
+        <div class="d-flex justify-content-center pt-3">
+          <h2>Registro de Roles</h2>
+        </div>
+        <div class="p-5 m-5 border">
+          <form class="row g-3" action="roles/crear.php" method="POST">
+            <div class="col-12">
+              <label for="codigo_rol" class="form-label">Codigo del rol</label>
+              <input type="number" class="form-control" id="codigo_rol" name="codigo_rol">
+            </div>
+            <div class="col-12">
+              <label for="descripcion_rol" class="form-label">Descripcion</label>
+              <input type="text" class="form-control" id="descripcion_rol" placeholder="Escribe el nombre del rol" name="descripcion_rol">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
