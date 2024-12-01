@@ -14,6 +14,13 @@ return [
     "get_inmuebles" => "SELECT * FROM inmueble",
     "create_inmueble" => "INSERT INTO inmueble (id_usuario, codigo_inmueble, descripcion_inmueble, estado_inmueble) VALUES (:id_usuario, :codigo_inmueble, :descripcion_inmueble, :estado_inmueble)",
     "update_inmueble" => "UPDATE inmueble SET id_usuario = :id_usuario, codigo_inmueble = :codigo_inmueble, descripcion_inmueble = :descripcion_inmueble, estado_inmueble = :estado_inmueble WHERE codigo_inmueble = :codigo_inmueble",
-    "delete_inmueble" => "DELETE FROM inmueble WHERE codigo_inmueble = :codigo_inmueble"
-]
+    "delete_inmueble" => "DELETE FROM inmueble WHERE codigo_inmueble = :codigo_inmueble",
+    "create_mantenimiento" => "INSERT INTO mantenimiento (codigo_mantenimiento, descripcion_mantenimiento, estado_mantenimiento, responsable_mantenimiento, id_usuario, codigo_inmueble, fecha_mantenimiento) VALUES (:codigo_mantenimiento, :descripcion_mantenimiento, :estado_mantenimiento, :responsable_mantenimiento, :id_usuario, :codigo_inmueble, :fecha_mantenimiento)",
+    "get_mantenimiento" => "SELECT * FROM mantenimiento WHERE codigo_mantenimiento = :codigo_mantenimiento",
+    "get_mantenimientos" => "SELECT * FROM mantenimiento",
+    "delete_mantenimiento" => "DELETE FROM mantenimiento WHERE codigo_mantenimiento = :codigo_mantenimiento",
+    "create_visita" => "INSERT INTO visita (codigo_visita, nombre_visita, fecha_visita, motivo_visita, codigo_reporte, codigo_inmueble) VALUES (:codigo_visita, :nombre_visita, :fecha_visita, :motivo_visita, :codigo_reporte, :codigo_inmueble)",
+
+
+    ]
 ?>
