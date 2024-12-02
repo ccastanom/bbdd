@@ -21,16 +21,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         empty($descripcion_evento) || 
         empty($fecha_evento) ||
         empty($recordatorio_evento) ||
-        empty($id_usuario)) || {
+        empty($id_usuario)) {
         echo "Por favor, completa todos los campos.";
     } else {
 
         // validar si usuario que crea el evento existe
-        $query_key = "get_inmueble";
+        $query_key = "get_user";
         $query = getQuery($query_key, $queries);
 
         $data = [
-            ":codigo_inmueble" => $codigo_inmueble,
+            ":id_usuario" => $id_usuario,
         ];
 
         $stm = $pdo->prepare($query);
@@ -40,30 +40,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if (empty($resultado) == false) {
             $data = [
-                ":codigo_mantenimiento" => $codigo_mantenimiento,
-                ":descripcion_mantenimiento" => $descripcion_mantenimiento,
-                ":fecha_mantenimiento"=> $fecha_mantenimiento,
-                ":estado_mantenimiento"=> $estado_mantenimiento,
-                ":responsable_mantenimiento"=> $responsable_mantenimiento,
-                ":id_usuario"=> $id_usuario,
-                ":codigo_inmueble"=> $codigo_inmueble
+                ":codigo_evento" => $codigo_evento,
+                ":tipo_evento" => $tipo_evento,
+                ":descripcion_evento"=> $descripcion_evento,
+                ":fecha_evento"=> $fecha_evento,
+                ":recordatorio_evento"=> $recordatorio_evento,
+                ":id_usuario"=> $id_usuario
             ];
 
             // obtener una consulta dinamica
-            $query_key = "create_mantenimiento";
+            $query_key = "create_evento";
             $query = getQuery($query_key, $queries);
 
             $stm = $pdo->prepare($query);
             $stm->execute($data);
             
             echo "<script>
-                alert('¡La solicitud de mantenimiento se creo con exito!');
+                alert('¡El evento se creo con exito!');
                 window.location.href = '../index.php';
             </script>";
             exit;
         } else {
             echo "<script>
-                alert('¡El inmueble no existe!');
+                alert('¡El evento no pudo ser creado!');
                 window.location.href = '../index.php';
             </script>";
             exit;

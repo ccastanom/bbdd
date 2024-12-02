@@ -65,8 +65,8 @@
             Evento
             </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="crear-visita.php">Crear</a></li>
-            <li><a class="dropdown-item" href="buscar-visita.php">Buscar</a></li>   
+            <li><a class="dropdown-item" href="crear-evento.php">Crear</a></li>
+            <li><a class="dropdown-item" href="buscar-evento.php">Buscar</a></li>   
             </ul>
         </li>
         </ul>
