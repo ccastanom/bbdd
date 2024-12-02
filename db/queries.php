@@ -22,6 +22,5 @@ return [
     "create_visita" => "INSERT INTO visita (codigo_visita, nombre_visita, fecha_visita, motivo_visita, codigo_reporte, codigo_inmueble) VALUES (:codigo_visita, :nombre_visita, :fecha_visita, :motivo_visita, :codigo_reporte, :codigo_inmueble)",
     "get_visita" => "SELECT * FROM visita WHERE codigo_visita = :codigo_visita",
     "get_visitas" => "SELECT * FROM visita",
-    "delete_visita" => "DELETE FROM visita WHERE codigo_visita = :codigo_visita",
     ]
 ?>
