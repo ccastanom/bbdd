@@ -21,15 +21,14 @@ if (isset($_GET['codigo_visita']) && $_GET['codigo_visita'] !== '') {
     // Mostrar resultados
     if ($stm->rowCount() > 0) {
       while ($fila = $stm->fetch(PDO::FETCH_ASSOC)) {
+        $codigo_reporte = $fila['codigo_reporte'] ? $fila['codigo_reporte'] : "";
         echo "<tr>
           <td>" . htmlspecialchars($fila['codigo_visita']) . "</td>
           <td>" . htmlspecialchars($fila['nombre_visita']) . "</td>
           <td>" . htmlspecialchars($fila['fecha_visita']) . "</td>
           <td>" . htmlspecialchars($fila['motivo_visita']) . "</td>
-          <td>" . htmlspecialchars($fila['codigo_reporte']) . "</td>
+          <td>" . htmlspecialchars($codigo_reporte) . "</td>
           <td>" . htmlspecialchars($fila['codigo_inmueble']) . "</td>
-          <td class='d-flex justify-content-center'>
-          </td>
         </tr>";
       }
     } else {
@@ -48,15 +47,14 @@ if (isset($_GET['codigo_visita']) && $_GET['codigo_visita'] !== '') {
     // Mostrar resultados
     if ($stm->rowCount() > 0) {
       while ($fila = $stm->fetch(PDO::FETCH_ASSOC)) {
+        $codigo_reporte = $fila['codigo_reporte'] ? $fila['codigo_reporte'] : "";
         echo "<tr>
           <td>" . htmlspecialchars($fila['codigo_visita']) . "</td>
           <td>" . htmlspecialchars($fila['nombre_visita']) . "</td>
           <td>" . htmlspecialchars($fila['fecha_visita']) . "</td>
           <td>" . htmlspecialchars($fila['motivo_visita']) . "</td>
-          <td>" . htmlspecialchars($fila['codigo_reporte']) . "</td>
+          <td>" . htmlspecialchars($codigo_reporte) . "</td>
           <td>" . htmlspecialchars($fila['codigo_inmueble']) . "</td>
-          <td class='d-flex justify-content-center'>
-          </td>
         </tr>";
       }
     } else {

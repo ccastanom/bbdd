@@ -12,7 +12,7 @@
           <h2>Buscar Visitante</h2>
         </div>
         <div class="p-5 m-5 border">
-          <form class="d-flex" role="search" action="buscar-visitante.php" method="GET">
+          <form class="d-flex" role="search" action="buscar-visita.php" method="GET">
             <input class="form-control me-2" type="search" placeholder="Ingresa el codigo de visita" name="codigo_visita" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
@@ -24,8 +24,8 @@
                         <th>Nombre</th>
                         <th>Fecha</th>
                         <th>Motivo</th>
-                        <th>Cod_Reporte</th>
-                        <th>Cod_Inmueble</th>
+                        <th>Codigo reporte</th>
+                        <th>Codigo inmueble</th>
                     </tr>
                 </thead>
                 <tbody>

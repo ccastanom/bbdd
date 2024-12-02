@@ -12,7 +12,7 @@
           <h2>Registro de Visitantes</h2>
         </div>
         <div class="p-5 m-5 border">
-          <form class="row g-3" action="visita/crear.php" method="POST">
+          <form class="row g-3" action="visitas/crear.php" method="POST">
             <div class="col-12">
               <label for="codigo_visita" class="form-label">Codigo visita</label>
               <input type="number" class="form-control" id="codigo_visita" placeholder="Escribe el codigo de visita" name="codigo_visita" required>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-6">
               <label for="codigo_reporte" class="form-label">Codigo reporte</label>
-              <input type="number" class="form-control" id="codigo_reporte" name="codigo_reporte" required>
+              <input type="number" class="form-control" id="codigo_reporte" name="codigo_reporte">
             </div>
             <div class="col-md-6">
               <label for="codigo_inmueble" class="form-label">Codigo Inmueble</label>

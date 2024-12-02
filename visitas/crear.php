@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre_visita = $_POST['nombre_visita'];
     $fecha_visita = $_POST['fecha_visita'];
     $motivo_visita = $_POST['motivo_visita'];
-    $codigo_reporte = $_POST['codigo_reporte'];
+    $codigo_reporte = $_POST['codigo_reporte'] ? $_POST['codigo_reporte'] : NULL;
     $codigo_inmueble = $_POST['codigo_inmueble'];
 
     // Validar los datos (opcional)
@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         empty($nombre_visita) || 
         empty($fecha_visita) || 
         empty($motivo_visita) ||
-        empty($codigo_reporte) ||
         empty($codigo_inmueble)) {
         echo "Por favor, completa todos los campos.";
     } else {
