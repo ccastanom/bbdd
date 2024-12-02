@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tipo_evento = $_POST['tipo_evento'];
     $descripcion_evento = $_POST['descripcion_evento'];
     $fecha_evento = $_POST['fecha_evento'];
-    $recordatorio_evento = $_POST['recordatorio_evento'];
     $id_usuario = $_POST['id_usuario'];
 
     // Validar los datos (opcional)
@@ -20,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         empty($tipo_evento) || 
         empty($descripcion_evento) || 
         empty($fecha_evento) ||
-        empty($recordatorio_evento) ||
         empty($id_usuario)) {
         echo "Por favor, completa todos los campos.";
     } else {
@@ -44,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ":tipo_evento" => $tipo_evento,
                 ":descripcion_evento"=> $descripcion_evento,
                 ":fecha_evento"=> $fecha_evento,
-                ":recordatorio_evento"=> $recordatorio_evento,
                 ":id_usuario"=> $id_usuario
             ];
 

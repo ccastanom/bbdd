@@ -2,7 +2,7 @@
 return [
     "create_user" => "INSERT INTO usuario (id_usuario, nombre_usuario, password, correo_usuario, telefono_usuario, direccion_usuario, codigo_rol) VALUES (:id_usuario, :nombre_usuario, :password, :correo_usuario, :telefono_usuario, :direccion_usuario, :codigo_rol)",
     "get_user" => "SELECT descripcion_rol, nombre_usuario, u.codigo_rol as codigo_rol, id_usuario, correo_usuario, telefono_usuario, direccion_usuario  FROM usuario u INNER JOIN rol r ON r.codigo_rol = u.codigo_rol WHERE id_usuario = :id_usuario",
-    "get_users" => "SELECT descripcion_rol, nombre_usuario, u.codigo_rol as codigo_rol, id_usuario, correo_usuario, telefono_usuario, direccion_usuario  FROM usuario u INNER JOIN rol r ON r.codigo_rol = u.codigo_rol",
+    "get_users" => "SELECT descripcion_rol, nombre_usuario, u.codigo_rol as codigo_rol, id_usuario, correo_usuario, telefono_usuario, direccion_usuario  FROM usuario u INNER JOIN rol r ON r.codigo_rol = u.codigo_rol ORDER BY nombre_usuario ASC",
     "update_user" => "UPDATE usuario SET nombre_usuario = :nombre_usuario, correo_usuario = :correo_usuario, telefono_usuario = :telefono_usuario, direccion_usuario = :direccion_usuario, codigo_rol = :codigo_rol WHERE id_usuario = :id_usuario",
     "delete_user" => "DELETE FROM usuario WHERE id_usuario = :id_usuario",
     "create_rol" => "INSERT INTO rol (codigo_rol, descripcion_rol) VALUES (:codigo_rol, :descripcion_rol)",
@@ -25,7 +25,8 @@ return [
     "delete_visita" => "DELETE FROM visita WHERE codigo_visita = :codigo_visita",
     "create_evento" => "INSERT INTO evento (codigo_evento, tipo_evento, descripcion_evento, fecha_evento, recordatorio_evento, id_usuario) VALUES (:codigo_evento, :tipo_evento, :descripcion_evento, :fecha_evento, :recordatorio_evento, :id_usuario)",
     "get_evento" => "SELECT * FROM evento WHERE codigo_evento = :codigo_evento",
-    "get_eventos" => "SELECT * FROM evento",
+    "get_eventos" => "SELECT * FROM evento ORDER BY fecha_evento DESC",
+    "get_eventos_por_fechas" => "SELECT * FROM evento WHERE fecha_evento BETWEEN :fecha_inicio AND :fecha_final ORDER BY fecha_evento ASC",
     "delete_evento" => "DELETE FROM evento WHERE codigo_evento = :codigo_evento"
     ]
 ?>
