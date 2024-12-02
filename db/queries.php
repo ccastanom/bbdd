@@ -22,5 +22,10 @@ return [
     "create_visita" => "INSERT INTO visita (codigo_visita, nombre_visita, fecha_visita, motivo_visita, codigo_reporte, codigo_inmueble) VALUES (:codigo_visita, :nombre_visita, :fecha_visita, :motivo_visita, :codigo_reporte, :codigo_inmueble)",
     "get_visita" => "SELECT * FROM visita WHERE codigo_visita = :codigo_visita",
     "get_visitas" => "SELECT * FROM visita",
+    "delete_visita" => "DELETE FROM visita WHERE codigo_visita = :codigo_visita",
+    "create_evento" => "INSERT INTO evento (codigo_evento, tipo_evento, descripcion_evento, fecha_evento, recordatorio_evento, id_usuario) VALUES (:codigo_evento, :tipo_evento, :descripcion_evento, :fecha_evento, :recordatorio_evento, :id_usuario)",
+    "get_evento" => "SELECT * FROM evento WHERE codigo_evento = :codigo_evento",
+    "get_eventos" => "SELECT * FROM evento",
+    "delete_evento" => "DELETE FROM evento WHERE codigo_evento = :codigo_evento"
     ]
 ?>
