@@ -25,6 +25,6 @@ return [
     "delete_visita" => "DELETE FROM visita WHERE codigo_visita = :codigo_visita",
     "create_evento" => "INSERT INTO evento (codigo_evento, tipo_evento, descripcion_evento, fecha_evento, recordatorio_evento, id_usuario) VALUES (:codigo_evento, :tipo_evento, :descripcion_evento, :fecha_evento, :recordatorio_evento, :id_usuario)",
     "get_evento" => "SELECT * FROM evento WHERE codigo_evento = :codigo_evento",
-    "get_eventos" => "SELECT * FROM evento",
+    "get_eventos" => "SELECT * FROM evento"
     ]
 ?>
